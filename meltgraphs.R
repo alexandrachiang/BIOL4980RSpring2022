@@ -7,7 +7,8 @@ library(reshape2)
 
 setwd("/scratch/ahc87874/Check")
 
-pheno<-as_tibble(read.csv("GWAS_pheno_M1_Veg.csv"))
+pheno <- as_tibble(read.csv("GWAS_pheno_M1_Veg.csv"))
+pvals <- as_tibble(read.csv("modelpvals.csv"))
 
 colnames(pheno)[36]<-"CSRV"
 colnames(pheno)[37]<-"SSRV"
@@ -59,7 +60,7 @@ meanvegF1 <- signif(mean(CSRVTotal$value[CSRVTotal$CSRV=="Vegetarian" & CSRVTota
 meannonvegM1 <- signif(mean(CSRVTotal$value[CSRVTotal$CSRV=="Non-Vegetarian" & CSRVTotal$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(CSRVTotal$value[CSRVTotal$CSRV=="Vegetarian" & CSRVTotal$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(CSRVTotal$Sex),"\n(N=",table(CSRVTotal$Sex),")",sep="")
+xlab1 <-paste(levels(CSRVTotal$Sex),"\n(N=",table(CSRVTotal$Sex),")","\n(p=",pvals$CSRVvsTotal,")",sep="")
 
 graphCSRVTotal<- ggplot(data = CSRVTotal, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -92,7 +93,7 @@ meanvegF1 <- signif(mean(SSRVTotal$value[SSRVTotal$SSRV=="Vegetarian" & SSRVTota
 meannonvegM1 <- signif(mean(SSRVTotal$value[SSRVTotal$SSRV=="Non-Vegetarian" & SSRVTotal$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(SSRVTotal$value[SSRVTotal$SSRV=="Vegetarian" & SSRVTotal$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(SSRVTotal$Sex),"\n(N=",table(SSRVTotal$Sex),")",sep="")
+xlab1 <-paste(levels(SSRVTotal$Sex),"\n(N=",table(SSRVTotal$Sex),")","\n(p=",pvals$SSRVvsTotal,")",sep="")
 
 graphSSRVTotal<- ggplot(data = SSRVTotal, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -128,7 +129,7 @@ meanvegF1 <- signif(mean(CSRVLDL$value[CSRVLDL$CSRV=="Vegetarian" & CSRVLDL$Sex=
 meannonvegM1 <- signif(mean(CSRVLDL$value[CSRVLDL$CSRV=="Non-Vegetarian" & CSRVLDL$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(CSRVLDL$value[CSRVLDL$CSRV=="Vegetarian" & CSRVLDL$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(CSRVLDL$Sex),"\n(N=",table(CSRVLDL$Sex),")",sep="")
+xlab1 <-paste(levels(CSRVLDL$Sex),"\n(N=",table(CSRVLDL$Sex),")","\n(p=",pvals$CSRVvsLDL,")",sep="")
 
 graphCSRVLDL<- ggplot(data = CSRVLDL, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -161,7 +162,7 @@ meanvegF1 <- signif(mean(SSRVLDL$value[SSRVLDL$SSRV=="Vegetarian" & SSRVLDL$Sex=
 meannonvegM1 <- signif(mean(SSRVLDL$value[SSRVLDL$SSRV=="Non-Vegetarian" & SSRVLDL$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(SSRVLDL$value[SSRVLDL$SSRV=="Vegetarian" & SSRVLDL$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(SSRVLDL$Sex),"\n(N=",table(SSRVLDL$Sex),")",sep="")
+xlab1 <-paste(levels(SSRVLDL$Sex),"\n(N=",table(SSRVLDL$Sex),")","\n(p=",pvals$SSRVvsLDL,")",sep="")
 
 graphSSRVLDL<- ggplot(data = SSRVLDL, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -197,7 +198,7 @@ meanvegF1 <- signif(mean(CSRVHDL$value[CSRVHDL$CSRV=="Vegetarian" & CSRVHDL$Sex=
 meannonvegM1 <- signif(mean(CSRVHDL$value[CSRVHDL$CSRV=="Non-Vegetarian" & CSRVHDL$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(CSRVHDL$value[CSRVHDL$CSRV=="Vegetarian" & CSRVHDL$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(CSRVHDL$Sex),"\n(N=",table(CSRVHDL$Sex),")",sep="")
+xlab1 <-paste(levels(CSRVHDL$Sex),"\n(N=",table(CSRVHDL$Sex),")","\n(p=",pvals$CSRVvsHDL,")",sep="")
 
 graphCSRVHDL<- ggplot(data = CSRVHDL, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -230,7 +231,7 @@ meanvegF1 <- signif(mean(SSRVHDL$value[SSRVHDL$SSRV=="Vegetarian" & SSRVHDL$Sex=
 meannonvegM1 <- signif(mean(SSRVHDL$value[SSRVHDL$SSRV=="Non-Vegetarian" & SSRVHDL$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(SSRVHDL$value[SSRVHDL$SSRV=="Vegetarian" & SSRVHDL$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(SSRVHDL$Sex),"\n(N=",table(SSRVHDL$Sex),")",sep="")
+xlab1 <-paste(levels(SSRVHDL$Sex),"\n(N=",table(SSRVHDL$Sex),")","\n(p=",pvals$SSRVvsHDL,")",sep="")
 
 graphSSRVHDL<- ggplot(data = SSRVHDL, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -266,7 +267,7 @@ meanvegF1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=
 meannonvegM1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(CSRVTri$Sex),"\n(N=",table(CSRVTri$Sex),")",sep="")
+xlab1 <-paste(levels(CSRVTri$Sex),"\n(N=",table(CSRVTri$Sex),")","\n(p=",pvals$CSRVvsTri,")",sep="")
 
 graphCSRVTri<- ggplot(data = CSRVTri, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
@@ -299,7 +300,7 @@ meanvegF1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=
 meannonvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")",sep="")
+xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")",pvals$CSRVvsTri,")",sep="")
 
 graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
