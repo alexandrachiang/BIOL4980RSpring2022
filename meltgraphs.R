@@ -67,11 +67,7 @@ graphCSRVTotal<- ggplot(data = CSRVTotal, aes(x = Sex, y = value, fill = CSRV, c
   labs(fill = "CSRV",
        x = "Sex",
        y = "Total Cholesterol (mmol/L)",
-       title = "Relationship of CSRV & Total Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(CSRVTotal)/2,
-         sep = " ")) +
+       title = "Relationship of CSRV & Total Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+1, label = meannonvegM1, color = "#F8766D") +
@@ -104,11 +100,7 @@ graphSSRVTotal<- ggplot(data = SSRVTotal, aes(x = Sex, y = value, fill = SSRV, c
   labs(fill = "SSRV",
        x = "Sex",
        y = "Total Cholesterol (mmol/L)",
-       title = "Relationship of SSRV & Total Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(SSRVTotal)/2,
-         sep = " ")) +
+       title = "Relationship of SSRV & Total Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+1, label = meannonvegM1, color = "#F8766D") +
@@ -144,11 +136,7 @@ graphCSRVLDL<- ggplot(data = CSRVLDL, aes(x = Sex, y = value, fill = CSRV, color
   labs(fill = "CSRV",
        x = "Sex",
        y = "LDL Cholesterol (mmol/L)",
-       title = "Relationship of CSRV & LDL Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(CSRVLDL)/2,
-         sep = " ")) +
+       title = "Relationship of CSRV & LDL Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+.6, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+.6, label = meannonvegM1, color = "#F8766D") +
@@ -181,11 +169,7 @@ graphSSRVLDL<- ggplot(data = SSRVLDL, aes(x = Sex, y = value, fill = SSRV, color
   labs(fill = "SSRV",
        x = "Sex",
        y = "LDL Cholesterol (mmol/L)",
-       title = "Relationship of SSRV & LDL Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(SSRVLDL)/2,
-         sep = " ")) +
+       title = "Relationship of SSRV & LDL Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+1, label = meannonvegM1, color = "#F8766D") +
@@ -221,11 +205,7 @@ graphCSRVHDL<- ggplot(data = CSRVHDL, aes(x = Sex, y = value, fill = CSRV, color
   labs(fill = "CSRV",
        x = "Sex",
        y = "HDL Cholesterol (mmol/L)",
-       title = "Relationship of CSRV & HDL Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(CSRVHDL)/2,
-         sep = " ")) +
+       title = "Relationship of CSRV & HDL Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1-.3, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+.3, label = meannonvegM1, color = "#F8766D") +
@@ -258,11 +238,7 @@ graphSSRVHDL<- ggplot(data = SSRVHDL, aes(x = Sex, y = value, fill = SSRV, color
   labs(fill = "SSRV",
        x = "Sex",
        y = "HDL Cholesterol (mmol/L)",
-       title = "Relationship of SSRV & HDL Cholesterol",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(SSRVHDL)/2,
-         sep = " ")) +
+       title = "Relationship of SSRV & HDL Cholesterol") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1-.3, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1+.3, label = meannonvegM1, color = "#F8766D") +
@@ -298,11 +274,7 @@ graphCSRVTri<- ggplot(data = CSRVTri, aes(x = Sex, y = value, fill = CSRV, color
   labs(fill = "CSRV",
        x = "Sex",
        y = "Triglyceride (mmol/L)",
-       title = "Relationship of CSRV & Triglyceride",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(CSRVTri)/2,
-         sep = " ")) +
+       title = "Relationship of CSRV & Triglyceride") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1-1, label = meannonvegM1, color = "#F8766D") +
@@ -335,11 +307,7 @@ graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color
   labs(fill = "SSRV",
        x = "Sex",
        y = "Triglyceride (mmol/L)",
-       title = "Relationship of SSRV & Triglyceride",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(SSRVTri)/2,
-         sep = " ")) +
+       title = "Relationship of SSRV & Triglyceride") +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegM1-1, label = meannonvegM1, color = "#F8766D") +
