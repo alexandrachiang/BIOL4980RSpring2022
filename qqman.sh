@@ -3,7 +3,7 @@
 #SBATCH --job-name=qqman
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
-#SBATCH --time=160:00:00
+#SBATCH --time=4:00:00
 #SBATCH --mem=180000
 #SBATCH --output=qqman.%j.out
 #SBATCH --error=qqman.%j.err
