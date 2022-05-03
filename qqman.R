@@ -73,7 +73,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTotal GWIS", annotatePval = 5e-8)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
@@ -83,7 +83,7 @@ outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
-qq(gwasResults$P, main = "Q-Q plot of Total GWIS p-values")
+qq(gwasResults$P, main = "Q-Q plot of CSRVxTotal GWIS p-values")
 dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
