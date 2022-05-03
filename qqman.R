@@ -37,7 +37,7 @@ infile<-as_tibble(infile)
 #[19] "robust_P_Value_Joint"
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -89,7 +89,7 @@ dev.off()
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #TotalxSSRV
 indir="/scratch/ahc87874/Check/GEM/TotalCholesterol"
-#"/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
+#"/scratch/ahc87874/Check/GEM/TotalCholesterol" "/scratch/ahc87874/Check/GEM/LDLCholesterol" "/scratch/ahc87874/Check/GEMsingle/SSRVvsTri/Triglycerides"
 #"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
 
 for (i in 1:22) {
@@ -101,7 +101,7 @@ infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian
 infile<-as_tibble(infile) 
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -115,7 +115,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -133,7 +133,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -143,7 +143,7 @@ manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestive
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -152,7 +152,7 @@ dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #LDLxCSRV
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol"
+indir="/scratch/ahc87874/Check/GEM/LDLCholesterol"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -160,7 +160,7 @@ infile<-read.table(paste(indir, paste("LDLCholesterolxConsistent_Self_Reported_V
 infile<-as_tibble(infile) 
 
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -174,7 +174,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -192,7 +192,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -200,7 +200,7 @@ manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveli
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -209,7 +209,7 @@ dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #LDLxSSRV
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol"
+indir="/scratch/ahc87874/Check/GEM/LDLCholesterol"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -217,7 +217,7 @@ infile<-read.table(paste(indir, paste("LDLCholesterolxSelf_Reported_Vegetarian_p
 infile<-as_tibble(infile) 
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -231,7 +231,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -249,7 +249,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -257,7 +257,7 @@ manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestive
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -267,7 +267,7 @@ dev.off()
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #HDLxCSRV
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/HDLCholesterol"
+indir="/scratch/ahc87874/Check/GEM/HDLCholesterol"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -275,7 +275,7 @@ infile<-read.table(paste(indir, paste("HDLCholesterolxConsistent_Self_Reported_V
 infile<-as_tibble(infile) 
 
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -289,7 +289,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -307,7 +307,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -315,7 +315,7 @@ manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveli
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -324,7 +324,7 @@ dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #HDLxSSRV
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/HDLCholesterol"
+indir="/scratch/ahc87874/Check/GEM/HDLCholesterol"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -332,7 +332,7 @@ infile<-read.table(paste(indir, paste("HDLCholesterolxSelf_Reported_Vegetarian_p
 infile<-as_tibble(infile) 
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -346,7 +346,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -364,7 +364,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -372,7 +372,7 @@ manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestive
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -382,7 +382,7 @@ dev.off()
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #TrixSSRV
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
+indir="/scratch/ahc87874/Check/GEMsingle/SSRVvsTri/Triglycerides"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -390,7 +390,7 @@ infile<-read.table(paste(indir, paste("TriglyceridesxSelf_Reported_Vegetarian_pl
 infile<-as_tibble(infile) 
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -404,7 +404,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -422,7 +422,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -430,7 +430,7 @@ manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestive
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
@@ -439,8 +439,8 @@ dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #TotalxSSRV 2
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEMsingle2/SSRVvsTotal/TotalCholesterol"
-#"/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
+indir="/scratch/ahc87874/Check/GEMsingle2/SSRVvsTotal/TotalCholesterol"
+#"/scratch/ahc87874/Check/GEM/TotalCholesterol" "/scratch/ahc87874/Check/GEM/LDLCholesterol" "/scratch/ahc87874/Check/GEMsingle/SSRVvsTri/Triglycerides"
 #"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
 
 for (i in 1:22) {
@@ -452,7 +452,7 @@ infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian
 infile<-as_tibble(infile) 
   
 #Subset data
-infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Interaction, RSID)
 
 #Get qqman format
 colnames(infile1)<-c("CHR", "BP", "P", "SNP")
@@ -466,7 +466,7 @@ if (i == 1) {
 
 }
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
@@ -484,7 +484,7 @@ write.table(newdata,
 pvalue<-newdata[10,3]
 
 #Make manhattan plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and242.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
@@ -494,7 +494,7 @@ manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestive
 dev.off()
 
 #Make qq plot
-outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and242.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
