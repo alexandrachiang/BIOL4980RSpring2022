@@ -12,7 +12,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  TotalxCSRV<-infile1
+    TotalxCSRV<-infile1
   } else {
     TotalxCSRV<-rbind(TotalxCSRV, infile1)
   }
@@ -36,7 +36,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  TotalxSSRV<-infile1
+    TotalxSSRV<-infile1
   } else {
     TotalxSSRV<-rbind(TotalxSSRV, infile1)
   }
@@ -60,7 +60,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  LDLxCSRV<-infile1
+    LDLxCSRV<-infile1
   } else {
     LDLxCSRV<-rbind(LDLxCSRV, infile1)
   }
@@ -84,7 +84,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  LDLxSSRV<-infile1
+    LDLxSSRV<-infile1
   } else {
     LDLxSSRV<-rbind(LDLxSSRV, infile1)
   }
@@ -108,7 +108,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  HDLxCSRV<-infile1
+    HDLxCSRV<-infile1
   } else {
     HDLxCSRV<-rbind(HDLxCSRV, infile1)
   }
@@ -132,7 +132,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  HDLxSSRV<-infile1
+    HDLxSSRV<-infile1
   } else {
     HDLxSSRV<-rbind(HDLxSSRV, infile1)
   }
@@ -156,7 +156,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  TAGxCSRV<-infile1
+    TAGxCSRV<-infile1
   } else {
     TAGxCSRV<-rbind(TAGxCSRV, infile1)
   }
@@ -180,7 +180,7 @@ for (i in 1:22) {
 
   #Add to input
   if (i == 1) {
-	  TAGxSSRV<-infile1
+    TAGxSSRV<-infile1
   } else {
     TAGxSSRV<-rbind(TAGxSSRV, infile1)
   }
