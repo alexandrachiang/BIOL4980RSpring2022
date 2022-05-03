@@ -332,6 +332,28 @@ x <- c("pheno", "exposure", "SNPID", "RSID", "CHR", "POS", "Non_Effect_Allele", 
        "Beta_G.", "robust_SE_Beta_G.", 
        "robust_P_Value_Marginal", "robust_P_Value_Interaction", "robust_P_Value_Joint"
 )
+colnames(TotalxCSRVsigSNPs) <- x
+colnames(TotalxSSRVsigSNPs) <- x
+colnames(LDLxCSRVsigSNPs) <- x
+colnames(LDLxSSRVsigSNPs) <- x
+colnames(HDLxCSRVsigSNPs) <- x
+colnames(HDLxSSRVsigSNPs) <- x
+colnames(TAGxCSRVsigSNPs) <- x
+colnames(TAGxSSRVsigSNPs) <- x
+
+sigSNPs <- rbind(TotalxCSRVsigSNPs, TotalxSSRVsigSNPs, 
+		 LDLxCSRVsigSNPs, LDLxSSRVsigSNPs,
+		 HDLxCSRVsigSNPs, HDLxSSRVsigSNPs,
+		 TAGxCSRVsigSNPs, TAGxSSRVsigSNPs)
+outdir="/scratch/ahc87874/Check/SNPsfull"
+attach(sigSNPs)
+sigSNPs <- sigSNPs[order(robust_P_Value_Interaction),]
+write.table(sigSNPs, 
+	paste(outdir, "/sigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+write.csv(sigSNPs, paste(outdir, "/sigSNPs.csv", sep=""), 
+	  row.names=FALSE, quote=FALSE)
+
 colnames(TotalxCSRVtopSNPs) <- x
 colnames(TotalxSSRVtopSNPs) <- x
 colnames(LDLxCSRVtopSNPs) <- x
