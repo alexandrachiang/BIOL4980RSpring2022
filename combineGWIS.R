@@ -18,6 +18,16 @@ for (i in 1:22) {
 
 TotalxCSRV <- TotalxCSRV %>% mutate(pheno = "Total", exposure = "CSRV") %>% select(pheno, exposure, everything())
 
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(TotalxCSRV)
+newdata <- TotalxCSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- newdata
+write.table(newdata, 
+	paste(outdir, "/TotalxCSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(TotalxCSRV, 
@@ -41,6 +51,16 @@ for (i in 1:22) {
 }
 
 TotalxSSRV <- TotalxSSRV %>% mutate(pheno = "Total", exposure = "SSRV") %>% select(pheno, exposure, everything())
+
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(TotalxSSRV)
+newdata <- TotalxSSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/TotalxSSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -66,6 +86,16 @@ for (i in 1:22) {
 
 LDLxCSRV <- LDLxCSRV %>% mutate(pheno = "LDL", exposure = "CSRV") %>% select(pheno, exposure, everything())
 
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(LDLxCSRV)
+newdata <- LDLxCSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/LDLxCSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(LDLxCSRV, 
@@ -89,6 +119,16 @@ for (i in 1:22) {
 }
 
 LDLxSSRV <- LDLxSSRV %>% mutate(pheno = "LDL", exposure = "SSRV") %>% select(pheno, exposure, everything())
+
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(LDLxSSRV)
+newdata <- LDLxSSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/LDLxSSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -114,6 +154,16 @@ for (i in 1:22) {
 
 HDLxCSRV <- HDLxCSRV %>% mutate(pheno = "HDL", exposure = "CSRV") %>% select(pheno, exposure, everything())
 
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(HDLxCSRV)
+newdata <- HDLxCSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/HDLxCSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(HDLxCSRV, 
@@ -137,6 +187,16 @@ for (i in 1:22) {
 }
 
 HDLxSSRV <- HDLxSSRV %>% mutate(pheno = "HDL", exposure = "SSRV") %>% select(pheno, exposure, everything())
+
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(HDLxSSRV)
+newdata <- HDLxSSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/HDLxSSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -162,6 +222,16 @@ for (i in 1:22) {
 
 TAGxCSRV <- TAGxCSRV %>% mutate(pheno = "TAG", exposure = "CSRV") %>% select(pheno, exposure, everything())
 
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(TAGxCSRV)
+newdata <- TAGxCSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/TAGxCSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(TAGxCSRV, 
@@ -186,6 +256,16 @@ for (i in 1:22) {
 
 TAGxSSRV <- TAGxSSRV %>% mutate(pheno = "TAG", exposure = "SSRV") %>% select(pheno, exposure, everything())
 
+outdir="/scratch/ahc87874/Check/SNPsfull"
+#Make table of top 10 SNPs
+attach(TAGxSSRV)
+newdata <- TAGxSSRV[order(robust_P_Value_Interaction),]
+newdata <- newdata[1:10,]
+topSNPs <- rbind(topSNPs, newdata)
+write.table(newdata, 
+	paste(outdir, "/TAGxSSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(TAGxSSRV, 
@@ -203,6 +283,12 @@ HDLxCSRV <- as_tibble(read.table("HDLxCSRVall.txt", header = TRUE))
 HDLxSSRV <- as_tibble(read.table("HDLxSSRVall.txt", header = TRUE))
 TAGxCSRV <- as_tibble(read.table("TAGxCSRVall.txt", header = TRUE))
 TAGxSSRV <- as_tibble(read.table("TAGxSSRVall.txt", header = TRUE))
+
+outdir="/scratch/ahc87874/Check/SNPsfull"
+topSNPs <- topSNPs[order(robust_P_Value_Interaction),]
+write.table(topSNPs, 
+	paste(outdir, "/topSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
 
