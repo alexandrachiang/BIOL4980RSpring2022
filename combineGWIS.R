@@ -1,5 +1,12 @@
 library(tidyverse)
 
+RBIND <- function(datalist) {
+  require(plyr)
+  temp <- rbind.fill(datalist)
+  rownames(temp) <- unlist(lapply(datalist, row.names))
+  temp
+}
+
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #TotalxCSRV
@@ -57,7 +64,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TotalxSSRV)
 newdata <- TotalxSSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/TotalxSSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -91,7 +98,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(LDLxCSRV)
 newdata <- LDLxCSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/LDLxCSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -125,7 +132,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(LDLxSSRV)
 newdata <- LDLxSSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/LDLxSSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -159,7 +166,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(HDLxCSRV)
 newdata <- HDLxCSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/HDLxCSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -193,7 +200,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(HDLxSSRV)
 newdata <- HDLxSSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/HDLxSSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -227,7 +234,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TAGxCSRV)
 newdata <- TAGxCSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/TAGxCSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -261,7 +268,7 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TAGxSSRV)
 newdata <- TAGxSSRV[order(robust_P_Value_Interaction),]
 newdata <- newdata[1:10,]
-topSNPs <- rbind(topSNPs, newdata)
+topSNPs <- RBIND(list(topSNPs, newdata))
 write.table(newdata, 
 	paste(outdir, "/TAGxSSRVtopSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
