@@ -300,7 +300,7 @@ meanvegF1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=
 meannonvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
 meanvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
     
-xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")",pvals$CSRVvsTri,")",sep="")
+xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")","\n(p=",pvals$SSRVvsTri,")",sep="")
 
 graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
