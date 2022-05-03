@@ -297,6 +297,7 @@ topSNPs <- rbind(TotalxCSRVtopSNPs, TotalxSSRVtopSNPs,
 		 HDLxCSRVtopSNPs, HDLxSSRVtopSNPs,
 		 TAGxCSRVtopSNPs, TAGxSSRVtopSNPs)
 outdir="/scratch/ahc87874/Check/SNPsfull"
+attach(topSNPs)
 topSNPs <- topSNPs[order(robust_P_Value_Interaction),]
 write.table(topSNPs, 
 	paste(outdir, "/topSNPs.txt", sep=""),
