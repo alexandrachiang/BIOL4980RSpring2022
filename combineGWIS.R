@@ -353,6 +353,7 @@ write.table(topSNPs,
 write.csv(topSNPs, paste(outdir, "/topSNPs.csv", sep=""), 
 	  row.names=FALSE, quote=FALSE)
 
+setwd("/scratch/ahc87874/Check/FUMA")
 outdir="/scratch/ahc87874/Check/FUMA"
 colnames(TotalxCSRV) <- x
 colnames(TotalxSSRV) <- x
@@ -372,6 +373,8 @@ write.table(CSRVall,
 write.table(SSRVall, 
 	paste(outdir, "/SSRVall.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
+gzip("CSRVall.txt")
+gzip("SSRVall.txt")
 
 #Group by Pheno
 Totalall <- rbind(TotalxCSRV, TotalxSSRV)
@@ -390,10 +393,14 @@ write.table(HDLall,
 write.table(TAGall, 
 	paste(outdir, "/TAGall.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
+gzip("Totalall.txt")
+gzip("LDLall.txt")
+gzip("HDLall.txt")
+gzip("TAGall.txt")
 
 #Group All
 All <- rbind(TotalxCSRV, TotalxSSRV, LDLxCSRV, LDLxSSRV, HDLxCSRV, HDLxSSRV, TAGxCSRV, TAGxSSRV)
 write.table(All, 
 	paste(outdir, "/All.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
-
+gzip("All.txt")
