@@ -16,6 +16,8 @@ for (i in 1:22) {
   }
 }
 
+TotalxCSRV <- TotalxCSRV %>% mutate(pheno = "Total", exposure = "CSRV") %>% select(pheno, exposure, everything())
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(TotalxCSRV, 
@@ -37,6 +39,8 @@ for (i in 1:22) {
     TotalxSSRV<-rbind(TotalxSSRV, infile)
   }
 }
+
+TotalxSSRV <- TotalxSSRV %>% mutate(pheno = "Total", exposure = "SSRV") %>% select(pheno, exposure, everything())
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -60,6 +64,8 @@ for (i in 1:22) {
   }
 }
 
+LDLxCSRV <- LDLxCSRV %>% mutate(pheno = "LDL", exposure = "CSRV") %>% select(pheno, exposure, everything())
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(LDLxCSRV, 
@@ -81,6 +87,8 @@ for (i in 1:22) {
     LDLxSSRV<-rbind(LDLxSSRV, infile)
   }
 }
+
+LDLxSSRV <- LDLxSSRV %>% mutate(pheno = "LDL", exposure = "SSRV") %>% select(pheno, exposure, everything())
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -104,6 +112,8 @@ for (i in 1:22) {
   }
 }
 
+HDLxCSRV <- HDLxCSRV %>% mutate(pheno = "HDL", exposure = "CSRV") %>% select(pheno, exposure, everything())
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(HDLxCSRV, 
@@ -125,6 +135,8 @@ for (i in 1:22) {
     HDLxSSRV<-rbind(HDLxSSRV, infile)
   }
 }
+
+HDLxSSRV <- HDLxSSRV %>% mutate(pheno = "HDL", exposure = "SSRV") %>% select(pheno, exposure, everything())
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
@@ -148,6 +160,8 @@ for (i in 1:22) {
   }
 }
 
+TAGxCSRV <- TAGxCSRV %>% mutate(pheno = "TAG", exposure = "CSRV") %>% select(pheno, exposure, everything())
+
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
 write.table(TAGxCSRV, 
@@ -169,6 +183,8 @@ for (i in 1:22) {
     TAGxSSRV<-rbind(TAGxSSRV, infile)
   }
 }
+
+TAGxSSRV <- TAGxSSRV %>% mutate(pheno = "TAG", exposure = "SSRV") %>% select(pheno, exposure, everything())
 
 outdir="/scratch/ahc87874/Check/FUMA"
 #Save table of all chr for pheno x exposure
