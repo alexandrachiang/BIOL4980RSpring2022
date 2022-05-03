@@ -25,8 +25,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TotalxCSRV)
 newdata <- TotalxCSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+TotalxCSRVsigSNPs <-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(TotalxCSRVsigSNPs, 
 	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -64,8 +64,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TotalxSSRV)
 newdata <- TotalxSSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+TotalxSSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(TotalxSSRVsigSNPs, 
 	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -103,8 +103,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(LDLxCSRV)
 newdata <- LDLxCSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+LDLxCSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(LDLxCSRVsigSNPs, 
 	paste(outdir, "/LDLxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -142,8 +142,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(LDLxSSRV)
 newdata <- LDLxSSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+LDLxSSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(LDLxSSRVsigSNPs, 
 	paste(outdir, "/LDLxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -181,8 +181,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(HDLxCSRV)
 newdata <- HDLxCSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+HDLxCSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(HDLxCSRVsigSNPs, 
 	paste(outdir, "/HDLxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -220,8 +220,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(HDLxSSRV)
 newdata <- HDLxSSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+HDLxSSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(HDLxSSRVsigSNPs, 
 	paste(outdir, "/HDLxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -259,8 +259,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TAGxCSRV)
 newdata <- TAGxCSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+TAGxCSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(TAGxCSRVsigSNPs, 
 	paste(outdir, "/TAGxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
@@ -298,8 +298,8 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 attach(TAGxSSRV)
 newdata <- TAGxSSRV[order(robust_P_Value_Interaction),]
 
-sigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
-write.table(sigSNPs, 
+TAGxSSRVsigSNPs<-newdata%>%filter(robust_P_Value_Interaction<=1e-5)
+write.table(TAGxSSRVsigSNPs, 
 	paste(outdir, "/TAGxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
