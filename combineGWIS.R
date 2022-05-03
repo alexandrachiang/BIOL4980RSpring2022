@@ -1,7 +1,7 @@
 library(plyr)
 library(tidyverse)
 
-topSNPs <- data.frame(matrix(ncol = 3, nrow = 0))
+topSNPs <- as_tibble(data.frame(matrix(ncol = 27, nrow = 0)))
 x <- c("pheno", "exposure", "SNPID", "RSID", "CHR", "POS", "Non_Effect_Allele", "Effect_Allele", "N_Samples", "AF", 
        "N_Consistent_Self_Reported_Vegetarian_across_all_24hr_1", "N_Self_Reported_Vegetarian_plus_strict_initial_and24_1", 
        "AF_Consistent_Self_Reported_Vegetarian_across_all_24hr_1", "AF_Self_Reported_Vegetarian_plus_strict_initial_and24_1",
