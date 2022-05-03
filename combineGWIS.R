@@ -23,6 +23,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(TotalxCSRV)
 newdata <- TotalxCSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 TotalxCSRVtopSNPs <- newdata[1:10,]
 write.table(TotalxCSRVtopSNPs, 
 	paste(outdir, "/TotalxCSRVtopSNPs.txt", sep=""),
@@ -56,6 +62,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(TotalxSSRV)
 newdata <- TotalxSSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 TotalxSSRVtopSNPs <- newdata[1:10,]
 write.table(TotalxSSRVtopSNPs, 
 	paste(outdir, "/TotalxSSRVtopSNPs.txt", sep=""),
@@ -89,6 +101,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(LDLxCSRV)
 newdata <- LDLxCSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/LDLxCSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 LDLxCSRVtopSNPs <- newdata[1:10,]
 write.table(LDLxCSRVtopSNPs, 
 	paste(outdir, "/LDLxCSRVtopSNPs.txt", sep=""),
@@ -122,6 +140,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(LDLxSSRV)
 newdata <- LDLxSSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/LDLxSSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 LDLxSSRVtopSNPs <- newdata[1:10,]
 write.table(LDLxSSRVtopSNPs, 
 	paste(outdir, "/LDLxSSRVtopSNPs.txt", sep=""),
@@ -155,6 +179,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(HDLxCSRV)
 newdata <- HDLxCSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/HDLxCSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 HDLxCSRVtopSNPs <- newdata[1:10,]
 write.table(HDLxCSRVtopSNPs, 
 	paste(outdir, "/HDLxCSRVtopSNPs.txt", sep=""),
@@ -188,6 +218,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(HDLxSSRV)
 newdata <- HDLxSSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/HDLxSSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 HDLxSSRVtopSNPs <- newdata[1:10,]
 write.table(HDLxSSRVtopSNPs, 
 	paste(outdir, "/HDLxSSRVtopSNPs.txt", sep=""),
@@ -221,6 +257,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(TAGxCSRV)
 newdata <- TAGxCSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/TAGxCSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 TAGxCSRVtopSNPs <- newdata[1:10,]
 write.table(TAGxCSRVtopSNPs, 
 	paste(outdir, "/TAGxCSRVtopSNPs.txt", sep=""),
@@ -254,6 +296,12 @@ outdir="/scratch/ahc87874/Check/SNPsfull"
 #Make table of top 10 SNPs
 attach(TAGxSSRV)
 newdata <- TAGxSSRV[order(robust_P_Value_Interaction),]
+
+sigSNPs<-newdata%>%filter(P<=1e-5)
+write.table(sigSNPs, 
+	paste(outdir, "/TAGxSSRVsigSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 TAGxSSRVtopSNPs <- newdata[1:10,]
 write.table(TAGxSSRVtopSNPs, 
 	paste(outdir, "/TAGxSSRVtopSNPs.txt", sep=""),
@@ -306,6 +354,14 @@ write.csv(topSNPs, paste(outdir, "/topSNPs.csv", sep=""),
 	  row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
+colnames(TotalxCSRV) <- x
+colnames(TotalxSSRV) <- x
+colnames(LDLxCSRV) <- x
+colnames(LDLxSSRV) <- x
+colnames(HDLxCSRV) <- x
+colnames(HDLxSSRV) <- x
+colnames(TAGxCSRV) <- x
+colnames(TAGxSSRV) <- x
 
 #Group by Exposure
 CSRVall <- rbind(TotalxCSRV, LDLxCSRV, HDLxCSRV, TAGxCSRV)
