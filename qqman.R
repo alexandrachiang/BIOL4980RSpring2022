@@ -53,7 +53,7 @@ if (i == 1) {
 
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
