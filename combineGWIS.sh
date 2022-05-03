@@ -3,7 +3,7 @@
 #SBATCH --job-name=combineGWIS
 #SBATCH --ntasks=1
 #SBATCH --time=4:00:00
-#SBATCH --mem=20
+#SBATCH --mem=18
 #SBATCH --output=combineGWIS.%j.out
 #SBATCH --error=combineGWIS.%j.err
 #SBATCH --mail-user=ahc87874@uga.edu
