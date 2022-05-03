@@ -51,6 +51,12 @@ if (i == 1) {
 
 }
 
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/TotalxCSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
@@ -115,6 +121,12 @@ if (i == 1) {
 
 }
 
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/TotalxCSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
@@ -174,6 +186,12 @@ if (i == 1) {
 
 }
 
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/LDLxCSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
@@ -230,6 +248,12 @@ if (i == 1) {
 }
 
 }
+
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/LDLxSSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
@@ -289,6 +313,12 @@ if (i == 1) {
 
 }
 
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/HDLxCSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
@@ -345,6 +375,12 @@ if (i == 1) {
 }
 
 }
+
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/HDLxSSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
@@ -404,6 +440,12 @@ if (i == 1) {
 
 }
 
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/TAGxCSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
@@ -461,6 +503,12 @@ if (i == 1) {
 }
 
 }
+
+outdir="/scratch/ahc87874/Check/FUMA"
+#Save table of all chr for pheno x exposure
+write.table(infileall, 
+	paste(outdir, "/TAGxSSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 1e-5)
