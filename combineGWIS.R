@@ -6,15 +6,13 @@ library(tidyverse)
 indir="/scratch/ahc87874/Check/GEM/TotalCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    TotalxCSRV<-infile1
+    TotalxCSRV<-infile
   } else {
-    TotalxCSRV<-rbind(TotalxCSRV, infile1)
+    TotalxCSRV<-rbind(TotalxCSRV, infile)
   }
 }
 
@@ -30,15 +28,13 @@ write.table(TotalxCSRV,
 indir="/scratch/ahc87874/Check/GEM/TotalCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    TotalxSSRV<-infile1
+    TotalxSSRV<-infile
   } else {
-    TotalxSSRV<-rbind(TotalxSSRV, infile1)
+    TotalxSSRV<-rbind(TotalxSSRV, infile)
   }
 }
 
@@ -54,15 +50,13 @@ write.table(TotalxSSRV,
 indir="/scratch/ahc87874/Check/GEM/LDLCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    LDLxCSRV<-infile1
+    LDLxCSRV<-infile
   } else {
-    LDLxCSRV<-rbind(LDLxCSRV, infile1)
+    LDLxCSRV<-rbind(LDLxCSRV, infile)
   }
 }
 
@@ -78,15 +72,13 @@ write.table(LDLxCSRV,
 indir="/scratch/ahc87874/Check/GEM/LDLCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    LDLxSSRV<-infile1
+    LDLxSSRV<-infile
   } else {
-    LDLxSSRV<-rbind(LDLxSSRV, infile1)
+    LDLxSSRV<-rbind(LDLxSSRV, infile)
   }
 }
 
@@ -102,15 +94,13 @@ write.table(LDLxSSRV,
 indir="/scratch/ahc87874/Check/GEM/HDLCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    HDLxCSRV<-infile1
+    HDLxCSRV<-infile
   } else {
-    HDLxCSRV<-rbind(HDLxCSRV, infile1)
+    HDLxCSRV<-rbind(HDLxCSRV, infile)
   }
 }
 
@@ -126,15 +116,13 @@ write.table(HDLxCSRV,
 indir="/scratch/ahc87874/Check/GEM/HDLCholesterol"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    HDLxSSRV<-infile1
+    HDLxSSRV<-infile
   } else {
-    HDLxSSRV<-rbind(HDLxSSRV, infile1)
+    HDLxSSRV<-rbind(HDLxSSRV, infile)
   }
 }
 
@@ -150,15 +138,13 @@ write.table(HDLxSSRV,
 indir="/scratch/ahc87874/Check/GEM/Triglycerides"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("TriglyceridesxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("TriglyceridesxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    TAGxCSRV<-infile1
+    TAGxCSRV<-infile
   } else {
-    TAGxCSRV<-rbind(TAGxCSRV, infile1)
+    TAGxCSRV<-rbind(TAGxCSRV, infile)
   }
 }
 
@@ -174,15 +160,13 @@ write.table(TAGxCSRV,
 indir="/scratch/ahc87874/Check/GEM/Triglycerides"
 
 for (i in 1:22) {
-  infile<-read.table(paste(indir, paste("TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
-
-  infile<-as_tibble(infile) 
+  infile<-as_tibble(read.table(paste(indir, paste("TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE))
 
   #Add to input
   if (i == 1) {
-    TAGxSSRV<-infile1
+    TAGxSSRV<-infile
   } else {
-    TAGxSSRV<-rbind(TAGxSSRV, infile1)
+    TAGxSSRV<-rbind(TAGxSSRV, infile)
   }
 }
 
