@@ -83,7 +83,7 @@ outdir="/scratch/ahc87874/Check/qqplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
-qq(gwasResults$P, main = "Q-Q plot of CSRVxTotal GWIS p-values")
+qq(infileall$P, main = "Q-Q plot of CSRVxTotal GWIS p-values")
 dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
