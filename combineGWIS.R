@@ -302,6 +302,8 @@ topSNPs <- topSNPs[order(robust_P_Value_Interaction),]
 write.table(topSNPs, 
 	paste(outdir, "/topSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
+write.csv(topSNPs, paste(outdir, "/topSNPs.csv", sep=""), 
+	  row.names=FALSE, quote=FALSE)
 
 outdir="/scratch/ahc87874/Check/FUMA"
 
