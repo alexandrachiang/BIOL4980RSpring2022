@@ -195,14 +195,14 @@ write.table(TAGxSSRV,
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 setwd("/scratch/ahc87874/Check/FUMA")
-TotalxCSRV <- as_tibble(read.table("TotalxCSRVall.txt", header = TRUE, quote = FALSE))
-TotalxSSRV <- as_tibble(read.table("TotalxSSRVall.txt", header = TRUE, quote = FALSE))
-LDLxCSRV <- as_tibble(read.table("LDLxCSRVall.txt", header = TRUE, quote = FALSE))
-LDLxSSRV <- as_tibble(read.table("LDLxSSRVall.txt", header = TRUE, quote = FALSE))
-HDLxCSRV <- as_tibble(read.table("HDLxCSRVall.txt", header = TRUE, quote = FALSE))
-HDLxSSRV <- as_tibble(read.table("HDLxSSRVall.txt", header = TRUE, quote = FALSE))
-TAGxCSRV <- as_tibble(read.table("TAGxCSRVall.txt", header = TRUE, quote = FALSE))
-TAGxSSRV <- as_tibble(read.table("TAGxSSRVall.txt", header = TRUE, quote = FALSE))
+TotalxCSRV <- as_tibble(read.table("TotalxCSRVall.txt", header = TRUE))
+TotalxSSRV <- as_tibble(read.table("TotalxSSRVall.txt", header = TRUE))
+LDLxCSRV <- as_tibble(read.table("LDLxCSRVall.txt", header = TRUE))
+LDLxSSRV <- as_tibble(read.table("LDLxSSRVall.txt", header = TRUE))
+HDLxCSRV <- as_tibble(read.table("HDLxCSRVall.txt", header = TRUE))
+HDLxSSRV <- as_tibble(read.table("HDLxSSRVall.txt", header = TRUE))
+TAGxCSRV <- as_tibble(read.table("TAGxCSRVall.txt", header = TRUE))
+TAGxSSRV <- as_tibble(read.table("TAGxSSRVall.txt", header = TRUE))
 
 outdir="/scratch/ahc87874/Check/FUMA"
 
