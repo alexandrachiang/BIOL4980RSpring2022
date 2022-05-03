@@ -1,10 +1,9 @@
 #!/bin/bash
 #SBATCH --partition=batch
 #SBATCH --job-name=qqman
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=16
+#SBATCH --ntasks=1
 #SBATCH --time=4:00:00
-#SBATCH --mem=180000
+#SBATCH --mem=18
 #SBATCH --output=qqman.%j.out
 #SBATCH --error=qqman.%j.err
 #SBATCH --mail-user=ahc87874@uga.edu
