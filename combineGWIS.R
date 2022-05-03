@@ -1,6 +1,19 @@
 library(plyr)
 library(tidyverse)
 
+topSNPs <- data.frame(matrix(ncol = 3, nrow = 0))
+x <- c("pheno", "exposure", "SNPID", "RSID", "CHR", "POS", "Non_Effect_Allele", "Effect_Allele", "N_Samples", "AF", 
+       "N_Consistent_Self_Reported_Vegetarian_across_all_24hr_1", "N_Self_Reported_Vegetarian_plus_strict_initial_and24_1", 
+       "AF_Consistent_Self_Reported_Vegetarian_across_all_24hr_1", "AF_Self_Reported_Vegetarian_plus_strict_initial_and24_1",
+       "N_Consistent_Self_Reported_Vegetarian_across_all_24hr_0", "N_Self_Reported_Vegetarian_plus_strict_initial_and24_0", 
+       "AF_Consistent_Self_Reported_Vegetarian_across_all_24hr_0", "AF_Self_Reported_Vegetarian_plus_strict_initial_and24_0", 
+       "Beta_Marginal", "robust_SE_Beta_Marginal", 
+       "Beta_G.Consistent_Self_Reported_Vegetarian_across_all_24hr", "Beta_G.Self_Reported_Vegetarian_plus_strict_initial_and24", 
+       "robust_SE_Beta_G.Consistent_Self_Reported_Vegetarian_across_all_24hr", "robust_SE_Beta_G.Self_Reported_Vegetarian_plus_strict_initial_and24", 
+       "robust_P_Value_Marginal", "robust_P_Value_Interaction", "robust_P_Value_Joint"
+)
+colnames(topSNPs) <- x
+
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #TotalxCSRV
