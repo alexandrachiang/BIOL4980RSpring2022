@@ -364,6 +364,15 @@ colnames(HDLxSSRV) <- x
 colnames(TAGxCSRV) <- x
 colnames(TAGxSSRV) <- x
 
+gzip("TotalxCSRVall.txt")
+gzip("TotalxSSRVall.txt")
+gzip("LDLxCSRVall.txt")
+gzip("LDLxSSRVall.txt")
+gzip("HDLxCSRVall.txt")
+gzip("HDLxSSRVall.txt")
+gzip("TAGxCSRVall.txt")
+gzip("TAGxSSRVall.txt")
+
 #Group by Exposure
 CSRVall <- rbind(TotalxCSRV, LDLxCSRV, HDLxCSRV, TAGxCSRV)
 SSRVall <- rbind(TotalxSSRV, LDLxSSRV, HDLxSSRV, TAGxSSRV)
