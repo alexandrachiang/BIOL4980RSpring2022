@@ -194,6 +194,39 @@ write.table(TAGxSSRV,
   
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+outdir="/scratch/ahc87874/Check/FUMA"
+
 #Group by Exposure
+CSRVall <- rbind(TotalxCSRV, LDLxCSRV, HDLxCSRV, TAGxCSRV)
+SSRVall <- rbind(TotalxSSRV, LDLxSSRV, HDLxSSRV, TAGxSSRV)
+write.table(CSRVall, 
+	paste(outdir, "/CSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+write.table(SSRVall, 
+	paste(outdir, "/SSRVall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 #Group by Pheno
+Totalall <- rbind(TotalxCSRV, TotalxSSRV)
+LDLall <- rbind(LDLxCSRV, LDLxSSRV)
+HDLall <- rbind(HDLxCSRV, HDLxSSRV)
+TAGall <- rbind(TAGxCSRV, TAGxSSRV)
+write.table(Totalall, 
+	paste(outdir, "/Totalall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+write.table(LDLall, 
+	paste(outdir, "/LDLall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+write.table(HDLall, 
+	paste(outdir, "/HDLall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+write.table(TAGall, 
+	paste(outdir, "/TAGall.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
 #Group All
+All <- rbind(TotalxCSRV, TotalxSSRV, LDLxCSRV, LDLxSSRV, HDLxCSRV, HDLxSSRV, TAGxCSRV, TAGxSSRV)
+write.table(All, 
+	paste(outdir, "/All.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+
