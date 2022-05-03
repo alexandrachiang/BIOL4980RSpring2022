@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=20:00:00
-#SBATCH --mem=100
+#SBATCH --mem=1000
 #SBATCH --output=combineGWIS.%j.out
 #SBATCH --error=combineGWIS.%j.err
 #SBATCH --mail-user=ahc87874@uga.edu
